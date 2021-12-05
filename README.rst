@@ -1,3 +1,5 @@
+**IMPORTANT** - This is a clone of PyJWT with removed security features to assist in security research and CTF-like competitions. Please use at your own risk.
+
 PyJWT
 =====
 
