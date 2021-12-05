@@ -183,19 +183,6 @@ class HMACAlgorithm(Algorithm):
     def prepare_key(self, key):
         key = force_bytes(key)
 
-        invalid_strings = [
-            b"-----BEGIN PUBLIC KEY-----",
-            b"-----BEGIN CERTIFICATE-----",
-            b"-----BEGIN RSA PUBLIC KEY-----",
-            b"ssh-rsa",
-        ]
-
-        if any(string_value in key for string_value in invalid_strings):
-            raise InvalidKeyError(
-                "The specified key is an asymmetric key or x509 certificate and"
-                " should not be used as an HMAC secret."
-            )
-
         return key
 
     @staticmethod
